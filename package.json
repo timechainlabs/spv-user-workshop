@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@bsv/spv-wallet-js-client": "^1.0.0-beta.36",
+    "axios": "^1.8.3",
     "next": "15.2.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
