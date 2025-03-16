@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";  
-import Layout from "@/components/layout";
+import Layout from "@/app/layout";
 import UserActions from "@/components/user-actions";
 import Dashboard from "@/components/dashboard";
 import SendForm from "@/components/send-form"; 

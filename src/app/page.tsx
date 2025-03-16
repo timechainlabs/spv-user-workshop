@@ -1,4 +1,4 @@
-import Layout from '../components/layout';
+import Layout from './layout';
 import RegistrationForm from '../components/registration-form';
 
 export default function Home() {
