@@ -1,6 +1,12 @@
-# SPV User Workshop
+# SPV Wallet Integration Template
 
-SPV User Workshop is a **Next.js** template repository for building applications with **SPV Wallet** integration. This repo provides a simple and efficient setup for managing user wallets and interacting with **xPub keys**.
+SPV-Wallet-Integration-Template is a **Next.js** template repository for building applications with ***SPV Wallet integration***. It provides a simple and efficient setup for:
+
+- Creating new user wallets
+- Retrieving existing wallet balance using xPub keys
+- Managing UTXOs
+- Creating and handling transactions
+- Ideal for developers looking to integrate SPV Wallet functionality into their applications with ease. 🚀
 
 ## 🚀 Features
 - **Next.js 13+ (App Router Support)**
