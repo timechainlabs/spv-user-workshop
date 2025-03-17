@@ -1,4 +1,4 @@
-"use client";  // ✅ Required for client-side components
+"use client";
 
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";  
@@ -9,27 +9,24 @@ import SendForm from "@/components/send-form";
 
 export default function UserPage() {
   const params = useParams();  
-  const xpub = Array.isArray(params.xpub) ? params.xpub[0] : params.xpub ?? "";  // ✅ Ensures xpub is always a string
+  const xpub = Array.isArray(params.xpub) ? params.xpub[0] : params.xpub ?? "";
 
   const [activeTab, setActiveTab] = useState("dashboard");
   const [userName, setUserName] = useState("");
 
   useEffect(() => {
     if (xpub) {
-      console.log("User xpub:", xpub);  // ✅ Debugging xpub
+      console.log("User xpub:", xpub); 
     }
   }, [xpub]);
 
   if (!xpub) {
     return (
-      <Layout>
         <div className="text-center py-8">Loading wallet information...</div>
-      </Layout>
     );
   }
 
   return (
-    <Layout>
       <div className="max-w-6xl mx-auto">
         <div className="mb-6">
           <h1 className="text-2xl font-bold">{userName ? userName + "'s " : ""}Wallet</h1>
@@ -43,6 +40,5 @@ export default function UserPage() {
         {activeTab === "dashboard" && <Dashboard xpub={xpub} />}
         {activeTab === "send" && <SendForm />}
       </div>
-    </Layout>
   );
 }
