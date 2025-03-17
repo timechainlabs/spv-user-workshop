@@ -20,7 +20,7 @@ To get started, clone this repository and install dependencies:
 
 ```sh
 # Clone the repository
-git clone https://github.com/timechainlabs/spv-user-workshop.git
+git clone https://github.com/timechainlabs/spv-wallet-integration-template
 
 # Navigate to the project directory
 cd spv-user-workshop
