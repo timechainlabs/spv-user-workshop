@@ -1,6 +1,7 @@
 
 import { SPVWalletAdminAPI, SPVWalletUserAPI } from '@bsv/spv-wallet-js-client'
 import nextConfig from '../../next.config';
+import axios from 'axios';
 
 const initUserWallet = async (xpriv: string) => {
   const serverUrl = nextConfig.env?.NEXT_PUBLIC_SPV_WALLET_BASE_URL;
@@ -30,6 +31,20 @@ interface WalletInfo {
   currentBalance: number;
 }
 
+const createUserWallet = async (xpub: string, paymail: string, publicName: string) => {
+  const API_URL = 'https://spv-workshop.vercel.app/api/createUserWallet';
+  try {
+    const response = await axios.post(API_URL, { xpub, paymail, publicName }, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error creating user wallet:', error);
+    throw error;
+  }
+}
 
 const getWalletInfo = async (xpriv: string): Promise<WalletInfo> => {
   const walletClient = await initUserWallet(xpriv);
@@ -65,12 +80,11 @@ const getUtxos = async (xpub: string) => {
   return utxos;
 };
 
-
-
 export {
   initUserWallet,
   getWalletInfo,
   getTransactions,
   createTransaction,
+  createUserWallet,
   getUtxos,
 };

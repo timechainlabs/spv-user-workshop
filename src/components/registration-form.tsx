@@ -23,7 +23,7 @@ export default function RegistrationForm() {
       const response = await createUserWallet(xpub, paymail, publicName);
 
       if (response) {
-        router.push(`/user/${xpub}`);
+        router.push(`/${xpub}`);
       } else {
         throw new Error("Wallet creation failed");
       }

@@ -2,11 +2,13 @@
   "name": "spv-next-workshop",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-keys": "npx tsx generate-keys.ts"
   },
   "dependencies": {
     "@bsv/spv-wallet-js-client": "^1.0.0-beta.36",
