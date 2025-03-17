@@ -1,37 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SPV User Workshop
 
-## Getting Started
+SPV User Workshop is a **Next.js** template repository for building applications with **SPV Wallet** integration. This repo provides a simple and efficient setup for managing user wallets and interacting with **xPub keys**.
 
-First, run the development server:
+## 🚀 Features
+- **Next.js 13+ (App Router Support)**
+- **SPV Wallet Integration**
+- **xPub Key Generation**
+- **Client-Side Routing**
+- **Minimal Setup with `npm install`**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🛠️ Installation
+To get started, clone this repository and install dependencies:
+
+```sh
+# Clone the repository
+git clone https://github.com/rustybuddha/spv-user-workshop.git
+
+# Navigate to the project directory
+cd spv-user-workshop
+
+# Install dependencies
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔑 Generate xPub Key
+To generate an xPub key, run:
+```sh
+npm run generate-keys
+```
+This will create a new **xPub key** using a randomly generated mnemonic phrase.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 Run the Frontend Application
+To start the Next.js development server, use:
+```sh
+npm run dev
+```
+The application will be available at **http://localhost:3000/**.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 Project Structure
 
-## Learn More
+```
+spv-user-workshop/
+│-- public/               # Static assets (e.g., images, fonts)
+│-- src/
+│   ├── app/              # Application routes and pages
+│   ├── components/       # Reusable UI components
+│   ├── styles/           # Global and component-specific styles
+│   └── utils/            # Utility functions and helpers
+│-- .env                  # Environment variables
+│-- .gitignore            # Git ignore rules
+│-- generate-keys.ts      # Script for generating xPub keys
+│-- next.config.ts        # Next.js configuration
+│-- package-lock.json     # Lockfile for npm dependencies
+│-- package.json          # Project dependencies and scripts
+│-- postcss.config.mjs    # PostCSS configuration
+└── tsconfig.json         # TypeScript configuration
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🤝 Contributing
+Feel free to fork the repo and submit a pull request with improvements! Contributions are welcome.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📜 License
+This project is licensed under the **MIT License**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# spv-workshop
+---
+Happy coding! 🚀
