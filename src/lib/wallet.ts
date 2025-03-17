@@ -49,26 +49,28 @@ const initUserReadableWallet = async (xpub: string) => {
 };
 
 
+// src/api/registerUser.js
+
 const createUserWallet = async (xpub: string, paymail: string, publicName: string) => {
   try {
     if (!xpub || !paymail || !publicName) {
-      throw new Error("Missing required fields: xpub, paymail, or publicName");
+      throw new Error('Missing required fields: xpub, paymail, or publicName');
     }
 
-    console.log("Initializing admin wallet...");
+    console.log('Initializing admin wallet...');
     const adminClient = await initAdminWallet();
 
-    console.log("Creating xPub...");
+    console.log('Creating xPub...');
     const wallet = await adminClient.createXPub(xpub, {});
 
-    console.log("Creating paymail...");
-    const paymailRes = await adminClient.createPaymail(xpub, paymail, publicName, "", {});
+    console.log('Creating paymail...');
+    const paymailRes = await adminClient.createPaymail(xpub, paymail, publicName, '', {});
 
-    console.log("Paymail response:", paymailRes, "Wallet response:", wallet);
+    console.log('Paymail response:', paymailRes, 'Wallet response:', wallet);
 
-  return paymailRes;
+    return paymailRes;
   } catch (error) {
-    console.error("Error creating user wallet:", error);
+    console.error('Error creating user wallet:', error);
     return null;
   }
 };
