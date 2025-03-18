@@ -70,6 +70,9 @@ For additional functionality and best practices, refer to the **examples** folde
 For detailed SPV wallet documentation, visit:
 📖 [SPV Wallet Documentation](https://docs.bsvblockchain.org/network-topology/applications/spv-wallet)
 
+Use some of tha code linked below for more granular control of UTXOs for custom transactions:
+🧑‍🔬 [BSV Skills Center](https://github.com/bitcoin-sv/bsv-skills-center/blob/master/intro/quick-start.md)
+
 ## 🤝 Contributing
 Feel free to fork the repo and submit a pull request with improvements! Contributions are welcome.
 
