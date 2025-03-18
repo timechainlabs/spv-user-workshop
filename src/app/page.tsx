@@ -6,7 +6,8 @@ import RegistrationForm from "@/components/registration-form";
 
 export default function Home() {
   const [xpub, setXpub] = useState("");
-  const [activeTab, setActiveTab] = useState("enterXpub");
+
+  const [activeTab, setActiveTab] = useState("createWallet");
   const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -19,17 +20,17 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <div className="flex gap-4 mb-4">
+      <button
+          className={`px-4 py-2 rounded-md ${activeTab === "createWallet" ? "bg-blue-600 text-white" : "bg-gray-300"}`}
+          onClick={() => setActiveTab("createWallet")}
+        >
+          Create Wallet
+        </button>
         <button
           className={`px-4 py-2 rounded-md ${activeTab === "enterXpub" ? "bg-blue-600 text-white" : "bg-gray-300"}`}
           onClick={() => setActiveTab("enterXpub")}
         >
           Enter xPub
-        </button>
-        <button
-          className={`px-4 py-2 rounded-md ${activeTab === "createWallet" ? "bg-blue-600 text-white" : "bg-gray-300"}`}
-          onClick={() => setActiveTab("createWallet")}
-        >
-          Create Wallet
         </button>
       </div>
 
