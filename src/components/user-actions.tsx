@@ -14,6 +14,7 @@ export default function UserActions({
   const tabs = [
     { id: 'dashboard', label: 'Dashboard' },
     { id: 'send', label: 'Send Bitcoin' },
+    { id: 'inscribe', label: 'Inscribe text' },
   ];
 
   return (
