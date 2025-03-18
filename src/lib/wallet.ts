@@ -1,5 +1,5 @@
 
-import { SPVWalletAdminAPI, SPVWalletUserAPI } from '@bsv/spv-wallet-js-client'
+import { SPVWalletAdminAPI, SPVWalletUserAPI, OpReturn, DraftTransactionConfig } from '@bsv/spv-wallet-js-client'
 import nextConfig from '../../next.config';
 import axios from 'axios';
 
@@ -74,6 +74,30 @@ const createTransaction = async (xpriv: string, recipients: { to: string; satosh
 };
 
 
+const createOpReturnTransaction = async (xpriv: string,message :string) => {
+  
+  const walletClient = await initUserWallet(xpriv);
+  
+  const opReturn: OpReturn = {
+    stringParts: [message],
+  };
+  
+  const transactionConfig: DraftTransactionConfig = {
+    outputs: [
+      {
+        opReturn: opReturn,
+      },
+    ],
+  };
+  
+  const draftTransaction = await walletClient.draftTransaction(transactionConfig, {});
+  const finalized = await walletClient.finalizeTransaction(draftTransaction);
+  const transaction = await walletClient.recordTransaction(finalized, draftTransaction.id, {});
+  
+  return transaction;
+};
+
+
 const getUtxos = async (xpub: string) => {
   const walletClient = await initUserReadableWallet(xpub);
   const utxos = await walletClient.utxos({},{},{});
@@ -87,4 +111,5 @@ export {
   createTransaction,
   createUserWallet,
   getUtxos,
+  createOpReturnTransaction,
 };

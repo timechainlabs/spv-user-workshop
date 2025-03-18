@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";  
-import Layout from "@/app/layout";
 import UserActions from "@/components/user-actions";
 import Dashboard from "@/components/dashboard";
 import SendForm from "@/components/send-form"; 
+import OpReturnForm from "@/components/inscribe-text";
 
 export default function UserPage() {
   const params = useParams();  
@@ -39,6 +39,8 @@ export default function UserPage() {
 
         {activeTab === "dashboard" && <Dashboard xpub={xpub} />}
         {activeTab === "send" && <SendForm />}
+        {activeTab === "inscribe" && <OpReturnForm />}
+        
       </div>
   );
 }

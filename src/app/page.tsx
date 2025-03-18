@@ -1,18 +1,18 @@
-"use client"; // ✅ Ensures this is a Client Component
+"use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation"; // ✅ Correct import for App Router
+import { useRouter } from "next/navigation";
 import RegistrationForm from "@/components/registration-form";
 
 export default function Home() {
   const [xpub, setXpub] = useState("");
   const [activeTab, setActiveTab] = useState("enterXpub");
-  const router = useRouter(); // ✅ Now works correctly
+  const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (xpub) {
-      router.push(`/${xpub}`); // ✅ Redirect to /{xpub}
+      router.push(`/${xpub}`);
     }
   };
 
